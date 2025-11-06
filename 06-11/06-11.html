@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bttons</title>
+  <style>
+    button{
+      padding: 10px 25px;
+      border: 1px solid black;
+      border-radius: 5px;
+    }
+    .red{
+      background-color: red;
+      color: white;
+    }
+    .blue{
+      background-color: blue;
+      color:white;
+    }
+    .green{
+      background-color: Green;
+      color:white;
+    }
+    .yellow{
+      background-color: yellow;
+      
+    }
+  </style>
+</head>
+<body>
+  <center>
+  <button class="red" onclick="bg_color('red')">Red</button>
+  <button class="blue" onclick="bg_color('blue')">Blue</button>
+  <button class="green" onclick="bg_color('green')">Green</button>
+  <button class="yellow" onclick="bg_color('yellow')">Yellow</button>
+  <button onclick="bg_color('white')">Reset</button>
+  </center>
+  <script>
+    function bg_color(clr){
+
+      document.body.style.backgroundColor=`${clr}`
+    }
+    // bg_color();
+  </script>
+</body>
+</html>
