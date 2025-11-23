@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+</head>
+<body>
+  <label for="" class="fs-4">StudentName:</label>
+  <input type="text" id="entry"style="width: 350px;" class="m-2  border-success rounded-1">
+  <br>
+  <button onclick="addele()" class="p-1 ms-2 mt-2 rounded-1 bg-success">Add Name</button>
+  <button onclick="removele()" class="p-1 ms-2 rounded-1 bg-danger">Remove Last</button>
+  <h3 class="ms-2 mt-2">Student Name⬇️</h3>
+  <ul class="fs-4" style="list-style: disc;">
+
+  </ul>
+</body>
+<script>
+  let student=document.getElementById("entry");
+  let ul=document.getElementsByTagName("ul");
+  
+  function addele(){
+  if(student.value===""){
+    alert("Name should notbe null")
+  }else{
+    let li=document.createElement("li")
+    li.textContent=student.value
+    ul[0].appendChild(li)
+    student.value=""
+  }
+  
+  }
+  function removele(){
+  ul[0].removeChild(ul[0].lastElementChild);
+  }
+</script>
+</html>

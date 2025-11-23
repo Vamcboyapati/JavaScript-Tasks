@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1 class="head">This is Javascript</h1>
+  <div class="cont">
+    <h1>This is Javascript</h1>
+    <h1>This is Javascript</h1>
+    <h1>This is Javascript</h1>
+    <h1>This is Javascript</h1>
+    <h1>This is Javascript</h1>
+  </div>
+  <script>
+    let heading=document.querySelector('.head')
+    heading.textContent="Java script is a scripting language";
+    let headings=document.querySelectorAll('.cont h1')
+    for(i=0;i<headings.length;i++){
+      headings[i].textContent="and it is used to make the webpages dynamic and interactive"
+    }    
+  </script>
+
+</body>
+</html>

@@ -1,6 +1,6 @@
 let colors = ["red", "green", "blue"];
-for (let color of colors) {
-  console.log(color.toUpperCase());
+for (let color in colors) {
+  console.log(colors[color].toUpperCase());
 }
 // RED
 // GREEN

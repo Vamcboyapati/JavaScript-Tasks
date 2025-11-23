@@ -1,0 +1,46 @@
+<div id="test">Hello <b>World</b></div>
+<script>
+  console.log(document.getElementById("test").innerText);
+  console.log(document.getElementById("test").innerHTML);
+</script>
+
+<!-- output:Hello World
+Hello <b>world</b> -->
+
+<p class="msg">Hi</p>
+<script>
+  const msg = document.getElementsByClassName("msg");
+  console.log(msg[0].textContent);
+</script>
+<!-- hi -->
+
+<ul id="list"><li>One</li></ul>
+<script>
+  const ul = document.getElementById("list");
+  const li = document.createElement("li");
+  li.innerText = "Two";
+  ul.appendChild(li);
+  console.log(ul.innerHTML);
+</script>
+
+<!-- . One -->
+<!-- . Two -->
+
+<div id="demo">Text</div>
+<script>
+  document.querySelector("#demo").append(" JS");
+  console.log(document.getElementById("demo").textContent);
+</script>
+<!-- Text JS  -->
+
+<ul id="items">
+  <li>Apple</li>
+  <li>Banana</li>
+</ul>
+<script>
+  const list = document.getElementById("items");
+  list.removeChild(list.firstElementChild);
+  console.log(list.innerText);
+</script>
+
+.Banana
