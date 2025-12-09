@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body{
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    input{
+      padding: 5px;
+      border: 1px solid black;
+    }
+    label{
+      font-size: 20px;
+    }
+    *{
+      margin: 0px;
+    }
+    p{
+      /* margin-left: 100px;
+      margin-top:5px; */
+      text-align: left;
+      margin-top: 5px;
+    }
+   
+    div{
+      background-color: rgb(196, 218, 238) ;
+      padding: 30px 0px;
+      text-align: center;
+      border-radius: 20px;
+
+    }
+    button{
+      padding: 10px 25px;
+      border-radius: 5px;
+      border: 1px solid black;
+      background-color: blue;
+      color: white;
+    }
+    button:hover{
+      scale: 102%;
+    }
+  </style>
+</head>
+<body>
+  
+  <div>
+    <div><h1>Login_Details</h1></div>
+    <form action="" id="form">
+      <table cellpadding="20">
+    
+    <tr>
+  
+      <td>
+        <label for="username">Username:</label>
+      </td>
+      <td>
+  <input type="text" name="username" id="username">
+
+      </td>
+    </tr>
+    <tr>
+      <td align="right">
+  <label for="password">Password:</label>
+
+      </td>
+      <td>
+  <input type="password" name="password" id="passsword">
+  <p></p>
+
+      </td>
+    </tr>
+  </table>
+  <button type="submit">Submit</button>
+    </form>
+    
+  </div>
+
+  <script>
+    
+    let inputele=document.getElementsByTagName("input")
+    let username=inputele[0]
+    let passw_input=inputele[1]
+    let show=document.getElementsByTagName("p")
+    let warn=show[0]
+    let submit=document.getElementsByTagName("button")
+    let sub_butt=submit[0]
+    
+    function passwrd_checker(){
+      passw_input.addEventListener("keydown",function(){
+        if(passw_input.value.length<=4){
+          warn.textContent="🔴 Weak";
+        }else if(passw_input.value.length>4 && passw_input.value.length<=7){
+          warn.textContent="🟠Medium";
+        }else{
+          warn.textContent="🟢 Strong";
+        }
+
+      })
+    }
+    passwrd_checker()
+    function submit_validation(){
+      document.getElementById("form").addEventListener("submit",(e)=>{
+        if(username.value==="" || passw_input.value.length<=4){
+          e.preventDefault()
+          alert("please enter valid username or password")
+        }
+      })
+      
+    }
+    submit_validation()
+  </script>
+</body>
+</html>

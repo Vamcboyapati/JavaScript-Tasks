@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .but1,.but2,.but3,.but4{
+      padding: 10px 25px;
+      background-color: white;
+      border: 1px solid black ;
+      border-radius: 10px;
+    }
+    .theme{
+      background-color: black;
+      color: white;
+    }
+    .h2{
+      background-color: green;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <button class="but1" onclick="changetheme()" on>🌕Mode</button>
+  <h2  id="title">DOM Practice Task</h2>
+  <button class="but2" onclick="addstyles()">Add styles</button>
+  <button class="but2" onclick="removestyles()">Remove styles</button>
+  <br>
+  &nbsp;
+  <br>
+  <button class="but3" onclick="addimage()">show image</button>
+  <button class="but4" onclick="removeimg()">Remove image</button>
+  <div>
+
+  </div>
+
+</body>
+<script>
+  function changetheme(){
+    document.body.classList.toggle("theme")
+  }
+  function addstyles(){
+    let head=document.getElementsByTagName("h2")
+    head[0].classList.add("h2")
+  }
+  function removestyles(){
+    let head=document.getElementsByTagName("h2")
+    head[0].classList.remove("h2")
+  }
+  function addimage(){
+    let img=document.createElement("img")
+    let container=document.getElementsByTagName("div")
+    img.setAttribute("src","https://m.media-amazon.com/images/M/MV5BMTkyMjRhNmQtYTJkYy00Mzg0LWJmOGUtMjJhMDU0MzhiY2ZhXkEyXkFqcGc@._V1_.jpg")
+    container[0].appendChild(img)
+  }
+  function removeimg(){
+    let container=document.getElementsByTagName("div")
+    container[0].innerHTML=""
+  }
+</script>
+</html>
